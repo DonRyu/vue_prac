@@ -15,6 +15,7 @@ export default {
 <style>
 .navBar {
   background-color: purple;
+  text-align: center;
 }
 .navBar a {
   color: white;
