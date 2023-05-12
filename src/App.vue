@@ -1,7 +1,10 @@
 <template>
   <NavBar />
   <InfoBox />
-  <ModalView/>
+  <ModalView :isModal="isModal" />
+  <div style="text-align: center">
+    <Button @click="modalBtn">On</Button>
+  </div>
 </template>
 
 <script>
@@ -14,19 +17,33 @@ export default {
   components: {
     NavBar,
     InfoBox,
-    ModalView
+    ModalView,
   },
+  data(){
+    return{
+      isModal:false
+    }
+  },
+  methods:{
+    modalBtn(){
+      this.isModal = !this.isModal
+    }
+  }
 };
 </script>
 
-<style scoped>
+<style>
+body {
+  margin: 0;
+}
+div {
+  box-sizing: border-box;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-
 </style>
